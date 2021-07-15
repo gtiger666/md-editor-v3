@@ -4,6 +4,8 @@ import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import nodeService from './vitePlugins/nodeService';
 
+import { homepage } from './package.json';
+
 // https://segmentfault.com/a/1190000040127796
 import dts from 'vite-plugin-dts';
 
@@ -27,7 +29,7 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
   console.log('mode：', mode);
 
   return {
-    base: '/',
+    base: homepage,
     server: {
       host: 'localhost',
       open: true,
