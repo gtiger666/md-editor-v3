@@ -51,6 +51,10 @@ export interface StaticTextDefaultValue {
         buttonOK?: string;
         buttonUpload?: string;
     };
+    copyCode?: {
+        text?: string;
+        tips?: string;
+    };
 }
 export interface StaticTextDefault {
     'zh-CN': StaticTextDefaultValue;
@@ -130,6 +134,10 @@ declare const _default: import("vue").DefineComponent<{
         type: PropType<(keyof ToolbarTips)[]>;
         default: string[];
     };
+    toolbarsExclude: {
+        type: PropType<(keyof ToolbarTips)[]>;
+        default: never[];
+    };
     prettier: {
         type: PropType<boolean>;
         default: boolean;
@@ -151,12 +159,13 @@ declare const _default: import("vue").DefineComponent<{
     };
 }, () => JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, Record<string, any>, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<{
     prettier: boolean;
-    onSave: (v: string) => void;
-    editorName: string;
-    pageFullScreen: boolean;
     preview: boolean;
     htmlPreview: boolean;
+    editorName: string;
+    pageFullScreen: boolean;
     toolbars: (keyof ToolbarTips)[];
+    toolbarsExclude: (keyof ToolbarTips)[];
+    onSave: (v: string) => void;
     historyLength: number;
     hljs: Record<string, any>;
     modelValue: string;
@@ -176,12 +185,13 @@ declare const _default: import("vue").DefineComponent<{
     onUploadImg?: ((files: FileList, callBack: (urls: string[]) => void) => void) | undefined;
 }>, {
     prettier: boolean;
-    onSave: (v: string) => void;
-    editorName: string;
-    pageFullScreen: boolean;
     preview: boolean;
     htmlPreview: boolean;
+    editorName: string;
+    pageFullScreen: boolean;
     toolbars: (keyof ToolbarTips)[];
+    toolbarsExclude: (keyof ToolbarTips)[];
+    onSave: (v: string) => void;
     historyLength: number;
     hljs: Record<string, any>;
     modelValue: string;
